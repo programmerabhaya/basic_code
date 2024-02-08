@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Code Examples</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        color: #333;
+      }
+
+      .code-container {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+        padding: 20px;
+      }
+
+      h2 {
+        color: #555;
+        margin-top: 0;
+      }
+
+      .copy-button {
+        background-color: #4caf50;
+        border: none;
+        border-radius: 4px;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        transition-duration: 0.4s;
+      }
+
+      .copy-button:hover {
+        background-color: #45a049;
+      }
+
+      code {
+        display: block;
+        white-space: pre-wrap;
+        font-size: 14px;
+        font-family: Consolas, monospace;
+        padding: 10px;
+        background-color: #f9f9f9;
+        border-radius: 4px;
+        border: 1px solid #ddd;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Code Examples</h1>
+
+    <!-- HTML code -->
+    <div class="code-container">
+      <h2>HTML</h2>
+      <button class="copy-button" onclick="copyCode('html-code')">
+        Copy HTML
+      </button>
+      <code id="html-code">
+        &lt;!DOCTYPE html&gt; &lt;html lang="en"&gt; &lt;head&gt; &lt;meta
+        charset="UTF-8"&gt; &lt;meta name="viewport"
+        content="width=device-width, initial-scale=1.0"&gt; &lt;title&gt;HTML
+        Example&lt;/title&gt; &lt;link rel="stylesheet" href="styles.css"&gt;
+        &lt;/head&gt; &lt;body&gt; &lt;h1&gt;Hello, HTML!&lt;/h1&gt; &lt;script
+        src="script.js"&gt;&lt;/script&gt; &lt;/body&gt; &lt;/html&gt;
+      </code>
+    </div>
+
+    <!-- CSS code -->
+    <div class="code-container">
+      <h2>CSS</h2>
+      <button class="copy-button" onclick="copyCode('css-code')">
+        Copy CSS
+      </button>
+      <code id="css-code">
+        body { background-color: lightblue; } h1 { color: navy; }
+      </code>
+    </div>
+
+    <!-- JavaScript code -->
+    <div class="code-container">
+      <h2>JavaScript</h2>
+      <button class="copy-button" onclick="copyCode('js-code')">
+        Copy JavaScript
+      </button>
+      <code id="js-code"> console.log("Hello from JavaScript!"); </code>
+    </div>
+
+    <!-- Ruby code -->
+    <div class="code-container">
+      <h2>Ruby</h2>
+      <button class="copy-button" onclick="copyCode('ruby-code')">
+        Copy Ruby
+      </button>
+      <code id="ruby-code"> puts "Hello, Ruby!" </code>
+    </div>
+
+    <!-- C code -->
+    <div class="code-container">
+      <h2>C</h2>
+      <button class="copy-button" onclick="copyCode('c-code')">Copy C</button>
+      <code id="c-code">
+        #include &lt;stdio.h&gt; int main() { printf("Hello, C!\n"); return 0; }
+      </code>
+    </div>
+
+    <!-- C++ code -->
+    <div class="code-container">
+      <h2>C++</h2>
+      <button class="copy-button" onclick="copyCode('cpp-code')">
+        Copy C++
+      </button>
+      <code id="cpp-code">
+        #include &lt;iostream&gt; int main() { std::cout &lt;&lt; "Hello, C++!"
+        &lt;&lt; std::endl; return 0; }
+      </code>
+    </div>
+
+    <script>
+      function copyCode(containerId) {
+        const codeContainer = document.getElementById(containerId);
+        const codeElement = codeContainer.querySelector("code");
+        const codeText = codeElement.innerText;
+
+        navigator.clipboard
+          .writeText(codeText)
+          .then(() => {
+            alert("Code copied to clipboard!");
+          })
+          .catch((err) => {
+            console.error("Failed to copy: ", err);
+          });
+      }
+    </script>
+  </body>
+</html>
